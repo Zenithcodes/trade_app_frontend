@@ -3,7 +3,7 @@ import {StockList} from '../../components';
 
 const Home = () => {
   return (
-    <View style={{backgroundColor:"", flex:1}}>
+    <View style={{backgroundColor:"white", flex:1}}>
       <StockList />
     </View>
   );
