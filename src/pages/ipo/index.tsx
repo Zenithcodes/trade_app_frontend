@@ -1,8 +1,11 @@
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 
 const Ipo = () => {
     return(
-        <Text>Ipo</Text>
+        <View style={{backgroundColor:"white"}}>
+            <Text>Ipo</Text>
+        </View>
+        
     )
 }
 export default Ipo
