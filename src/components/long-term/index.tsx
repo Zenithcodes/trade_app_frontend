@@ -2,13 +2,12 @@ import { Text, View, Switch } from "react-native"
 import StockCard from "../common/StockCard"
 import styled from "styled-components/native"
 import { useState } from "react";
+import { ToggleSwitch } from "..";
+import { SwitchComponent } from "../../shared/styled-component";
 
 const LongTerm = () => {
-    const [showData, setShowData] = useState<boolean>(true);
+    const [tradeSelectedTab, setTradeSelectedTab] = useState(0);
 
-    const toggleData = () => {
-        setShowData(!showData);
-    };
     const stockData =
         [{
             name: "Tcs",
@@ -26,20 +25,13 @@ const LongTerm = () => {
             status: "open",
             createdAt: "20-01-2024"
         }]
-        const filteredStockData = showData ? stockData.filter(stock => stock.status === "open") : stockData.filter(stock => stock.status === "close");
+    const filteredStockData = tradeSelectedTab === 0 ? stockData.filter(stock => stock.status === "open") : stockData.filter(stock => stock.status === "close");
     return (
         <LongStockList>
-             <SwitchComponent>
-            <Text>{showData ? "Open" : "Close"}</Text>
-                <Switch
-                    trackColor={{ false: "#767577", true: "#81b0ff" }}
-                    thumbColor={showData ? "#f5dd4b" : "#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={toggleData}
-                    value={showData}
-                />
+            <SwitchComponent>
+                <ToggleSwitch setTradeSelectedTab={setTradeSelectedTab} />
             </SwitchComponent>
-               {filteredStockData.map((stock, index) => (
+            {filteredStockData.map((stock, index) => (
                 <StockCard
                     key={index}
                     name={stock.name}
@@ -58,15 +50,4 @@ const LongStockList = styled(View)`
 width:100%;
 height: 100%;
 background: white;
-`
-const SwitchComponent = styled(View)`
-width: 100%;
-margin-top: 10px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px;
-border-radius: 8px;
-transition: all 0.5s ease-in-out; /* Smooth transition */
 `

@@ -15,15 +15,15 @@ const StockCard = ({ name, targetPrice, stopLoss, buyPrice, createdAt }: any) =>
             <StockPriceConttainer>
                 <StockPriceName>
                     <StockPriceData>Buy Price:</StockPriceData>
-                    <Text>Rs: {buyPrice}</Text>
+                    <Text style={{fontWeight:'700'}}>Rs: {buyPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
                     <StockPriceData>Target Price:</StockPriceData>
-                    <Text>Rs: {targetPrice}</Text>
+                    <Text style={{fontWeight:'700'}}>Rs: {targetPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
                     <StockPriceData>Stop Loss:</StockPriceData>
-                    <Text>Rs: {stopLoss}</Text>
+                    <Text style={{fontWeight:'700'}}>Rs: {stopLoss}</Text>
                 </StockPriceName>
             </StockPriceConttainer>
             <StockRecordDate>
@@ -67,14 +67,14 @@ justify-content: space-between;
 const StockPriceName = styled(View)`
  display: flex;
  flex-direction: column;
- justify-content: center;
-  align-items: center; 
+ justify-content: start;
+align-items: start; 
  padding:0;
 margin:0;
 `
 const StockPriceData = styled(Text)`
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
 `
 const StockRecordDate = styled(View)`
   display: flex;
@@ -88,4 +88,5 @@ font-weight: bold;
 `
 const StockRecordDateTime = styled(Text)`
 font-size: 12px;
+font-weight:500;
 `
