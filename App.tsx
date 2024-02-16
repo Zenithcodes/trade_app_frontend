@@ -8,15 +8,16 @@ import { MainHeader } from './src/components';
 const App = () => {
   const BottomTab = createBottomTabNavigator();
   return (
-    <>
+    <View style={{flex:1}}>
     <MainHeader />
     <NavigationContainer>
-      <BottomTab.Navigator screenOptions={{headerShown:false}}>
+      {/* <BottomTab.Navigator screenOptions={{headerShown:false}}>
         <BottomTab.Screen name="Home" component={Home} />
         <BottomTab.Screen name="Ipo" component={Ipo} />
-      </BottomTab.Navigator>
+      </BottomTab.Navigator> */}
+      <Home />
     </NavigationContainer>
-    </>
+    </View>
   );
 };
 
