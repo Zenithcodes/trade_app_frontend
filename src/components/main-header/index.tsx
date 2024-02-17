@@ -19,7 +19,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 width: 100%;
-border-bottom-color: FEFBF6;
+border-bottom:1px solid black;
 padding: 10px 10px 0px 10px;
 background-color: white;
 

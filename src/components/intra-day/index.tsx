@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { View, Switch, Text } from "react-native";
+import { View, Switch, Text, ScrollView } from "react-native";
 import StockCard from "../common/StockCard";
 import styled from "styled-components/native";
 import { ToggleSwitch } from "..";
-import { SwitchComponent } from "../../shared/styled-component";
+import { List, Scroll, SwitchComponent } from "../../shared/styled-component";
 
 interface Stock {
     name: string;
@@ -32,15 +32,46 @@ const IntraDay: React.FC = () => {
             buyPrice: 60,
             status: "close",
             createdAt: "20-01-2024"
-        }
+        },
+        {
+            name: "advicka",
+            targetPrice: 122,
+            stopLoss: 110,
+            buyPrice: 116,
+            status: "open",
+            createdAt: "20-01-2024"
+        },
+        {
+            name: "advicka",
+            targetPrice: 122,
+            stopLoss: 110,
+            buyPrice: 116,
+            status: "open",
+            createdAt: "20-01-2024"
+        },
+        {
+            name: "advicka",
+            targetPrice: 122,
+            stopLoss: 110,
+            buyPrice: 116,
+            status: "open",
+            createdAt: "20-01-2024"
+        },
+        {
+            name: "advicka",
+            targetPrice: 122,
+            stopLoss: 110,
+            buyPrice: 116,
+            status: "open",
+            createdAt: "20-01-2024"
+        },
     ];
     const filteredStockData = tradeSelectedTab === 0 ? stockData.filter(stock => stock.status === "open") : stockData.filter(stock => stock.status === "close");
     console.log(filteredStockData)
     return (
-        <IntradayStockList>
-            <SwitchComponent>
-                <ToggleSwitch setTradeSelectedTab={setTradeSelectedTab} />
-            </SwitchComponent>
+        <>
+        <Scroll>
+        <List>
             {filteredStockData.map((stock, index) => (
                 <StockCard
                     key={index}
@@ -51,15 +82,14 @@ const IntraDay: React.FC = () => {
                     createdAt={stock.createdAt}
                 />
             ))}
-        </IntradayStockList>
+        </List>
+        </Scroll>
+         <SwitchComponent>
+         <ToggleSwitch setTradeSelectedTab={setTradeSelectedTab} />
+     </SwitchComponent>
+     </>
     );
 };
 
-export default IntraDay;
-const IntradayStockList = styled(View)`
-width:100%;
-height: 100%;
-background: white;
-transition: all 0.5s ease-in-out; /* Smooth transition */
-`
+export default IntraDay
 

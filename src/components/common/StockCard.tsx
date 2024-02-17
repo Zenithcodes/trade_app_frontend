@@ -14,16 +14,16 @@ const StockCard = ({ name, targetPrice, stopLoss, buyPrice, createdAt }: any) =>
             </StockName>
             <StockPriceConttainer>
                 <StockPriceName>
-                    <StockPriceData>Buy Price:</StockPriceData>
-                    <Text style={{fontWeight:'700'}}>Rs: {buyPrice}</Text>
+                    <StockPriceData>Buy Price</StockPriceData>
+                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {buyPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
-                    <StockPriceData>Target Price:</StockPriceData>
-                    <Text style={{fontWeight:'700'}}>Rs: {targetPrice}</Text>
+                    <StockPriceData>Target Price</StockPriceData>
+                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {targetPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
-                    <StockPriceData>Stop Loss:</StockPriceData>
-                    <Text style={{fontWeight:'700'}}>Rs: {stopLoss}</Text>
+                    <StockPriceData>Stop Loss</StockPriceData>
+                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {stopLoss}</Text>
                 </StockPriceName>
             </StockPriceConttainer>
             <StockRecordDate>
@@ -37,7 +37,7 @@ const StockCard = ({ name, targetPrice, stopLoss, buyPrice, createdAt }: any) =>
 export default StockCard
 const StockContainer = styled(View)`
 padding: 16px;
-margin: 16px;
+margin:12px 16px 0px 16px;
 border-radius: 8px;
 background-color: #ffffff;
 shadow-color: #000000;
@@ -56,7 +56,8 @@ const StockNameText = styled(Text)`
 const StockNameHeading = styled(Text)`
 font-size: 15px;
 font-family: serif;
-font-weight: bold;
+font-weight: 700;
+color:#5191f0;
 `
 const StockPriceConttainer = styled(View)`
 width: 100%;
@@ -75,6 +76,7 @@ margin:0;
 const StockPriceData = styled(Text)`
   font-size: 15px;
   font-weight: 500;
+  color:#757575;
 `
 const StockRecordDate = styled(View)`
   display: flex;

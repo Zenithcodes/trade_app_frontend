@@ -3,7 +3,7 @@ import StockCard from "../common/StockCard"
 import styled from "styled-components/native"
 import { useState } from "react";
 import { ToggleSwitch } from "..";
-import { SwitchComponent } from "../../shared/styled-component";
+import { List, Scroll, SwitchComponent } from "../../shared/styled-component";
 
 const LongTerm = () => {
     const [tradeSelectedTab, setTradeSelectedTab] = useState(0);
@@ -27,10 +27,9 @@ const LongTerm = () => {
         }]
     const filteredStockData = tradeSelectedTab === 0 ? stockData.filter(stock => stock.status === "open") : stockData.filter(stock => stock.status === "close");
     return (
-        <LongStockList>
-            <SwitchComponent>
-                <ToggleSwitch setTradeSelectedTab={setTradeSelectedTab} />
-            </SwitchComponent>
+        <>
+        <Scroll>
+        <List>
             {filteredStockData.map((stock, index) => (
                 <StockCard
                     key={index}
@@ -41,13 +40,13 @@ const LongTerm = () => {
                     createdAt={stock.createdAt}
                 />
             ))}
-        </LongStockList>
+        </List>
+        </Scroll>
+        <SwitchComponent>
+                <ToggleSwitch setTradeSelectedTab={setTradeSelectedTab} />
+            </SwitchComponent>
+        </>
     )
 }
 
 export default LongTerm;
-const LongStockList = styled(View)`
-width:100%;
-height: 100%;
-background: white;
-`
