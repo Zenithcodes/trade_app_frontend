@@ -4,7 +4,7 @@ import StockCard from "../common/StockCard";
 import styled from "styled-components/native";
 import { ToggleSwitch } from "..";
 import { List, Scroll, SwitchComponent } from "../../shared/styled-component";
-
+import {API_URL} from '@env'
 interface Stock {
     name: string;
     targetPrice: number;
@@ -13,7 +13,7 @@ interface Stock {
     status: string;
     createdAt: string;
 }
-
+console.log(API_URL)
 const IntraDay: React.FC = () => {
     const [tradeSelectedTab, setTradeSelectedTab] = useState(0);
     const stockData: Stock[] = [

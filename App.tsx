@@ -12,7 +12,7 @@ const App = () => {
     <MainHeader />
     <NavigationContainer>
       <BottomTab.Navigator screenOptions={{headerShown:false}}>
-        <BottomTab.Screen name="Home" options={{tabBarIcon: ({ color }) => (<Image source={require('../trade_app_frontend/src/assests/logo/homeIcon.svg')} />)}} component={Home} />
+        <BottomTab.Screen name="Home" options={{tabBarIcon: ({ color }) => (<Image source={require('./src/assests/logo/home-icon.png')} />)}} component={Home} />
         <BottomTab.Screen name="Ipo" component={Ipo} />
       </BottomTab.Navigator>
       {/* <Home /> */}
