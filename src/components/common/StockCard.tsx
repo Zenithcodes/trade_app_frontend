@@ -19,11 +19,11 @@ const StockCard = ({ name, targetPrice, stopLoss, buyPrice, createdAt }: any) =>
                 </StockPriceName>
                 <StockPriceName>
                     <StockPriceData>Target Price</StockPriceData>
-                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {targetPrice}</Text>
+                    <Text style={{fontWeight:'700', color:"#33691e"}}>Rs: {targetPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
                     <StockPriceData>Stop Loss</StockPriceData>
-                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {stopLoss}</Text>
+                    <Text style={{fontWeight:'700', color:"#d50000"}}>Rs: {stopLoss}</Text>
                 </StockPriceName>
             </StockPriceConttainer>
             <StockRecordDate>
@@ -39,10 +39,9 @@ const StockContainer = styled(View)`
 padding: 16px;
 margin:12px 16px 0px 16px;
 border-radius: 8px;
-background-color: #ffffff;
-shadow-color: #000000;
-shadow-opacity: 0.25;
-elevation: 5;
+background-color: #fafafa;
+border: 1px solid #e0e0e0;
+
 `
 const StockName = styled(View)`
 width: 100%;

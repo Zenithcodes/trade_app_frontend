@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, Switch, Text, ScrollView } from "react-native";
+import { View, Switch, Text, ScrollView, RefreshControl } from "react-native";
 import StockCard from "../common/StockCard";
 import styled from "styled-components/native";
 import { ToggleSwitch } from "..";
 import { List, Scroll, SwitchComponent } from "../../shared/styled-component";
 import {API_URL} from '@env'
+import axios from "axios";
 interface Stock {
     name: string;
     targetPrice: number;
@@ -16,6 +17,7 @@ interface Stock {
 console.log(API_URL)
 const IntraDay: React.FC = () => {
     const [tradeSelectedTab, setTradeSelectedTab] = useState(0);
+    const [refreshing, setRefreshing] = useState(false);
     const stockData: Stock[] = [
         {
             name: "advicka",
@@ -68,9 +70,18 @@ const IntraDay: React.FC = () => {
     ];
     const filteredStockData = tradeSelectedTab === 0 ? stockData.filter(stock => stock.status === "open") : stockData.filter(stock => stock.status === "close");
     console.log(filteredStockData)
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+          setRefreshing(false);
+        }, 2000);
+      }, []);
     return (
         <>
-        <Scroll>
+        <Scroll refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         <List>
             {filteredStockData.map((stock, index) => (
                 <StockCard
