@@ -1,8 +1,10 @@
 import Axios from 'axios';
-
+import {API_URL} from '@env'
 const axiosInstance = Axios.create({
-    baseURL: '',
-    headers: {}
+    baseURL: API_URL,
+    headers: {
+    'Content-Type': 'application/json',
+    }
 }) 
 
 axiosInstance.interceptors.request.use(

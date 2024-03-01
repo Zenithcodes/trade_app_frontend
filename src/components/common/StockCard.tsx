@@ -14,16 +14,16 @@ const StockCard = ({ name, targetPrice, stopLoss, buyPrice, createdAt }: any) =>
             </StockName>
             <StockPriceConttainer>
                 <StockPriceName>
-                    <StockPriceData>Buy Price</StockPriceData>
+                    <StockPriceData style={{color:"#858383"}}>Buy Price</StockPriceData>
                     <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {buyPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
-                    <StockPriceData>Target Price</StockPriceData>
-                    <Text style={{fontWeight:'700', color:"#33691e"}}>Rs: {targetPrice}</Text>
+                    <StockPriceData  style={{color:"#00710B"}}>Target Price</StockPriceData>
+                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {targetPrice}</Text>
                 </StockPriceName>
                 <StockPriceName>
-                    <StockPriceData>Stop Loss</StockPriceData>
-                    <Text style={{fontWeight:'700', color:"#d50000"}}>Rs: {stopLoss}</Text>
+                    <StockPriceData  style={{color:"#770000"}}>Stop Loss</StockPriceData>
+                    <Text style={{fontWeight:'700', color:"#454343"}}>Rs: {stopLoss}</Text>
                 </StockPriceName>
             </StockPriceConttainer>
             <StockRecordDate>
@@ -39,9 +39,8 @@ const StockContainer = styled(View)`
 padding: 16px;
 margin:12px 16px 0px 16px;
 border-radius: 8px;
-background-color: #fafafa;
-border: 1px solid #e0e0e0;
-
+background-color: #ffffff;
+elevation: 2;
 `
 const StockName = styled(View)`
 width: 100%;
@@ -75,7 +74,6 @@ margin:0;
 const StockPriceData = styled(Text)`
   font-size: 15px;
   font-weight: 500;
-  color:#757575;
 `
 const StockRecordDate = styled(View)`
   display: flex;
