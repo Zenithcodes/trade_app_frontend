@@ -55,7 +55,7 @@ const StockNameHeading = styled(Text)`
 font-size: 15px;
 font-family: serif;
 font-weight: 700;
-color:#5191f0;
+color:#1a237e;
 `
 const StockPriceConttainer = styled(View)`
 width: 100%;
